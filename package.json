@@ -1,0 +1,28 @@
+{
+  "name": "git-hydrate-pack",
+  "version": "0.0.2",
+  "description": "hydrate deltafied pack objects in a git pack stream",
+  "main": "hydrate.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/creationix/git-hydrate-pack.git"
+  },
+  "keywords": [
+    "git",
+    "hydrate",
+    "min-stream"
+  ],
+  "author": "Tim Caswell <tim@creationix.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/creationix/git-hydrate-pack/issues"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
