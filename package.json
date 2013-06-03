@@ -1,6 +1,6 @@
 {
   "name": "git-hydrate-pack",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "hydrate deltafied pack objects in a git pack stream",
   "main": "hydrate.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "url": "https://github.com/creationix/git-hydrate-pack/issues"
   },
   "dependencies": {
+    "git-apply-delta": "0.0.7"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

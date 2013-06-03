@@ -1,5 +1,5 @@
 var bops = require('bops');
-var sha1 = require('git-object-hash/sha-browser.js');
+var sha1 = require('./sha1.js');
 var applyDelta = require('git-apply-delta');
 
 var OFS_DELTA = 6,
@@ -10,6 +10,7 @@ var types = {
   "1": "commit",
   "2": "tree",
   "3": "blob",
+  "4": "tag"
 };
 
 module.exports = function (find) {
@@ -22,7 +23,7 @@ module.exports = function (find) {
       }
       if (item.type === REF_DELTA) {
         return find(bops.to(item.reference, 'hex'), function (err, ref) {
-          var data = applyDelta(ref.data, item.data);
+          var data = applyDelta(item.data, ref.data);
           var hash = sha1(data);
           emit(null, {
             hash: hash,
