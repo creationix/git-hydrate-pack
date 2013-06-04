@@ -24,7 +24,10 @@ module.exports = function (find) {
       if (item.type === REF_DELTA) {
         return find(bops.to(item.reference, 'hex'), function (err, ref) {
           var data = applyDelta(item.data, ref.data);
-          var hash = sha1(data);
+          var hash = sha1(bops.join([
+            bops.from(ref.type + " " + data.length + "\0"),
+            data
+          ]));
           emit(null, {
             hash: hash,
             type: ref.type,
