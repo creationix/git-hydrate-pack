@@ -1,10 +1,13 @@
 {
   "name": "git-hydrate-pack",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "hydrate deltafied pack objects in a git pack stream",
   "main": "hydrate.js",
   "scripts": {
     "test": "node test.js"
+  },
+  "browser": {
+    "./sha1.js": "./sha1-browser.js"
   },
   "repository": {
     "type": "git",
